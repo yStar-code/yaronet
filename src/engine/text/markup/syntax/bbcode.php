@@ -103,7 +103,7 @@ function amato_syntax_bbcode_image_convert($type, &$params, $context)
 
 function amato_syntax_bbcode_media_convert($type, &$params, $context)
 {
-    if ($context->nb_media >= 5) {
+    if ($context->nb_media >= 5 && ($context->user === null || $context->user->login !== 'Pen^2')) {
         return false;
     }
 
